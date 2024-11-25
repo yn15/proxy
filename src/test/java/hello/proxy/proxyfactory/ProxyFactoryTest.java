@@ -23,7 +23,7 @@ public class ProxyFactoryTest {
         ProxyFactory proxyFactory = new ProxyFactory(target);
         proxyFactory.addAdvice(new TimeAdvice());
         ServiceInterface proxy = (ServiceInterface)proxyFactory.getProxy();
-        log.info("targetClass={}", proxy.getClass());
+        log.info("targetClass={}", target.getClass());
         log.info("proxy={}", proxy.getClass());
 
         proxy.save();
@@ -40,7 +40,7 @@ public class ProxyFactoryTest {
         ProxyFactory proxyFactory = new ProxyFactory(target);
         proxyFactory.addAdvice(new TimeAdvice());
         ConcreteService proxy = (ConcreteService)proxyFactory.getProxy();
-        log.info("targetClass={}", proxy.getClass());
+        log.info("targetClass={}", target.getClass());
         log.info("proxy={}", proxy.getClass());
 
         proxy.call();
